@@ -40,7 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: MaterialButton(
                   color: Colors.blue,
                   onPressed: () async {
-                    await [Permission.camera, Permission.microphone].request();
+                    await [
+                      Permission.camera,
+                      Permission.microphone,
+                      Permission.bluetoothConnect,
+                      Permission.bluetoothScan,
+                      Permission.bluetooth
+                    ].request();
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) =>
                           VideoCallPage(channelName: _channelController.text),
